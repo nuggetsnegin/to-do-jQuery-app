@@ -21,6 +21,7 @@ $(document).ready(function () {
             $('input').val(''); /*set value to blank*/
             /*The .append() method inserts the specified content as the last child of each element in the jQuery collection (To insert it as the first child, use .prepend()).*/
             $('ul').append(`<li><span class="fa fa-square-o"></span>${toDoItem}</li>`);
+           
         }
 
             /* select ul not li due to event delegation / bubbling */
