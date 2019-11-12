@@ -29,6 +29,7 @@ $(document).ready(function () {
             let checkBox = $(this).find('.fa'); /*using find to ..find font awesome icon*/
             checkBox.removeClass('fa-square-o'); /*remove empty fa checkbox icon*/
             checkBox.addClass('fa-check-square-o'); /*add checked fa icon*/
+            let strikeThrough = $(this).wrap("<strike>");
         });
 
     });
