@@ -21,8 +21,8 @@ $(document).ready(function () {
             /*This method is used to set a string of text, a number, an array of strings corresponding to the value of each matched element. This method facilitates you to set the value by passing in the function. */
             $('input').val(''); /*set value to blank*/
 
-          /*allow the removal of items*/
-          let removalLink = " <a href='#'><span class='fa fa-trash'></span></a>";
+            /*allow the removal of items*/
+            let removalLink = " <a href='#'><span class='fa fa-trash'></span></a>";
             /*The .append() method inserts the specified content as the last child of each element in the jQuery collection (To insert it as the first child, use .prepend()).*/
             $('ul').append(`<li><span class="fa fa-square-o"></span>${toDoItem}${removalLink}</li>`);
         } else {
@@ -35,24 +35,30 @@ $(document).ready(function () {
             let checkBox = $(this).find('.fa'); /*using find to ..find font awesome icon*/
             checkBox.toggleClass('fa-square-o fa-check-square-o');
             $(this).toggleClass('text-muted');
+
+            /* move to bottom if completed!*/
+            // if (checkBox.is('.fa-check-square-o')) {
+            //     let toDoListItem = $(this).parent();
+            //     moveToBottom(toDoListItem);
+            // }
         });
-
-
-        /*removal of items*/
-        $('ul').on('click', 'a', function () {
-            let toDoListItem = $(this).parent();
-            toDoListItem.remove();
-        });
-
-        /*move completed to bottom*/
-        let moveToBottom = function (item) {
-            item.fadeOut(function () {
-                item.appendTo($('ul'));
-                item.fadeIn();
-            });
-        };
-
 
     });
+
+
+    /*removal of items*/
+    $('ul').on('click', 'a', function () {
+        let toDoListItem = $(this).parent();
+        toDoListItem.remove();
+    });
+
+    /*move completed to bottom*/
+    // let moveToBottom = function (item) {
+    //     item.fadeOut(function () {
+    //         item.appendTo($('ul'));
+    //         item.fadeIn();
+    //     });
+    // };
+
 
 });
