@@ -27,8 +27,9 @@ $(document).ready(function () {
         /* select ul not li due to event delegation / bubbling */
         $('ul').on('click', 'li', function(){ 
             let checkBox = $(this).find('.fa'); /*using find to ..find font awesome icon*/
-            let strikeThrough = $(this).wrap("<strike>");
             checkBox.toggleClass('fa-square-o fa-check-square-o'); 
+            $(this).toggleClass('text-muted');
+        
         });
 
     });
