@@ -24,12 +24,11 @@ $(document).ready(function () {
            
         }
 
-            /* select ul not li due to event delegation / bubbling */
+        /* select ul not li due to event delegation / bubbling */
         $('ul').on('click', 'li', function(){ 
             let checkBox = $(this).find('.fa'); /*using find to ..find font awesome icon*/
-            checkBox.removeClass('fa-square-o'); /*remove empty fa checkbox icon*/
-            checkBox.addClass('fa-check-square-o'); /*add checked fa icon*/
             let strikeThrough = $(this).wrap("<strike>");
+            checkBox.toggleClass('fa-square-o fa-check-square-o'); 
         });
 
     });
