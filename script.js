@@ -23,5 +23,11 @@ $(document).ready(function () {
             $('ul').append(`<li><span class="fa fa-square-o"></span>${toDoItem}</li>`);
         }
 
+            /* select ul not li due to event delegation / bubbling */
+        $('ul').on('click', 'li', function(){ 
+            $('ul').html(`<li><span class="fa-check-square-o"></span>${toDoItem}</li>`);
+        });
+
     });
+
 });
