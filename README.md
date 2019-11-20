@@ -5,7 +5,7 @@ Testing JQuery functions and Firebase!
 ## Built With
 
 * [vscode](https://code.visualstudio.com/) 
-$ [firebase](https://firebase.google.com/)
+* [firebase](https://firebase.google.com/)
 * my big brain :)
 
 
