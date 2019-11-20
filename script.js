@@ -60,6 +60,13 @@ $(document).ready(function () {
     dbRef.on('value', (data) => { /*call back function*/
       /*  console.log(data.val()); checking our database*/
       const toDoData = data.val();
+      const toDoArray = [];
+
+      for(property in toDoData){
+          console.log(toDoData[property].description); /*will append using html literals on page load so data is not hidden to the user*/
+          /*push into dataArray*/
+          toDoArray.push(`<li><span class="fa fa-square-o">${toDoData[property].description}</span></li>`)
+      }
 
     })
 
