@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    const dbRef = firebase.database().ref();
     /*check if jquery is reji*/
     console.log('ready');
 
@@ -25,6 +27,15 @@ $(document).ready(function () {
             let removalLink = " <a href='#'><span class='fa fa-trash'></span></a>";
             /*The .append() method inserts the specified content as the last child of each element in the jQuery collection (To insert it as the first child, use .prepend()).*/
             $('ul').append(`<li><span class="fa fa-square-o"></span>${toDoItem}${removalLink}</li>`);
+
+            /*creata an object that contains the info about our toDoItems and push the new object to db*/
+            const toDoItemInfo = {
+                description: toDoItem, /*w.e our todo item is*/
+                completed: false
+            }
+            dbRef.push(toDoItemInfo);
+            
+
         } else {
             // show error if input is empty
             $('.error').show();
@@ -35,12 +46,6 @@ $(document).ready(function () {
             let checkBox = $(this).find('.fa'); /*using find to ..find font awesome icon*/
             checkBox.toggleClass('fa-square-o fa-check-square-o');
             $(this).toggleClass('text-muted');
-
-            /* move to bottom if completed!*/
-            // if (checkBox.is('.fa-check-square-o')) {
-            //     let toDoListItem = $(this).parent();
-            //     moveToBottom(toDoListItem);
-            // }
         });
 
     });
@@ -51,14 +56,6 @@ $(document).ready(function () {
         let toDoListItem = $(this).parent();
         toDoListItem.remove();
     });
-
-    /*move completed to bottom*/
-    // let moveToBottom = function (item) {
-    //     item.fadeOut(function () {
-    //         item.appendTo($('ul'));
-    //         item.fadeIn();
-    //     });
-    // };
 
 
 });

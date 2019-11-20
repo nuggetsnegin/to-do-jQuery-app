@@ -7,132 +7,7 @@
   <title>jQuery To-Do App</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
-    input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
-
-    * { box-sizing: border-box; }
-
-    body {
-      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-      color: rgb(244, 199, 102);
-      
-    }
-
-    h1 {
-      font-weight: 500;
-      line-height: 1.1;
-    }
-
-    button, input, select[multiple], textarea {
-      background-image: none;
-    }
-
-    input, button, select, textarea {
-      font-family: inherit;
-      font-size: inherit;
-      line-height: inherit;
-    }
-
-    button, input {
-      line-height: normal;
-    }
-
-    button, input, select, textarea {
-      margin: 0;
-      font-family: inherit;
-      font-size: 100%;
-    }
-
-    ul, ol {
-      margin-top: 0;
-      margin-bottom: 10px;
-      list-style: none;
-    }
-
-    span{
-        margin-right: 5px;
-    }
-
-    ul li {
-      cursor: move;
-    }
-
-    a {
-      color: #428bca;
-      text-decoration: none;
-    }
-
-    .error{
-      display: none;
-    }
-
-    main {
-      padding: 30px;
-      margin-bottom: 30px;
-      font-size: 21px;
-      font-weight: 200;
-      line-height: 2.1;
-      color: inherit;
-      background-color: rgb(252, 249, 249);
-    }
-
-    main h1 {
-      font-size: 63px;
-      line-height: 1;
-      color: inherit;
-      margin-bottom: 5%;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 750px;
-      padding: 0 15px;
-      margin: auto;
-    }
-
-    .page-header {
-      padding-bottom: 10px;
-      margin: 40px 0 20px;
-      border-bottom: 2px dashed rgb(181, 181, 181);
-    }
-
-    input {
-      height: 45px;
-      padding: 10px 16px;
-      font-size: 18px;
-      line-height: 1.3;
-      border-radius: 6px;
-    }
-
-    .form-control {
-      display: block;
-      width: 100%;
-      height: 35px;
-      padding: 6px 12px;
-      font-size: 14px;
-      line-height: 1.4;
-      color: #555;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    }
-
-    .alert {
-      color: #b94a48;
-      background-color: #f2dede;
-      border: 1px solid #eed3d7;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-
-    .text-muted {
-      text-decoration: line-through;
-    }  
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -140,7 +15,7 @@
   <div class="container">
     
     <div class="page-header"> 
-      <h1>jQuery👉To-Do App👉</h1>
+      <h1>🍑jQuery & <span class="accent">(Firebase)</span>To-Do App🍑</h1>
     </div>
 
     <form>
@@ -152,8 +27,32 @@
     </ul>
   </div>
 </main>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script> <!--real time db-->
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="script.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC_HnpDUsp6xHCVa3CJgH5YNBxERHubGNU",
+    authDomain: "to-do-e6cab.firebaseapp.com",
+    databaseURL: "https://to-do-e6cab.firebaseio.com",
+    projectId: "to-do-e6cab",
+    storageBucket: "to-do-e6cab.appspot.com",
+    messagingSenderId: "122076180884",
+    appId: "1:122076180884:web:f4684f814407b600f79f81"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+
+
 </body>
 </html>
