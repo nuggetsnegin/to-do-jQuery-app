@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    const dbRef = firebase.database().ref();
+    const dbRef = firebase.database().ref(); /*set up db to variable*/
     /*check if jquery is reji*/
     console.log('ready');
 
@@ -58,7 +58,8 @@ $(document).ready(function () {
     });
 
     dbRef.on('value', (data) => { /*call back function*/
-        console.log(data.val()); /*checking our database*/
+      /*  console.log(data.val()); checking our database*/
+      const toDoData = data.val();
 
     })
 
