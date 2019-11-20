@@ -1,10 +1,11 @@
-# Simple JQuery To-do app!
+# (less)Simple JQuery To-do app with Firebase!
 
-Testing JQuery functions :D
+Testing JQuery functions and Firebase!
 
 ## Built With
 
 * [vscode](https://code.visualstudio.com/) 
+$ [firebase](https://firebase.google.com/)
 * my big brain :)
 
 
