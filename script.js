@@ -57,5 +57,10 @@ $(document).ready(function () {
         toDoListItem.remove();
     });
 
+    dbRef.on('value', (data) => { /*call back function*/
+        console.log(data.val()); /*checking our database*/
+
+    })
+
 
 });
